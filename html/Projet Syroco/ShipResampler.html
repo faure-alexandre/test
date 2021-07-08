@@ -1,0 +1,1589 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>Projet Syroco.ShipResampler API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Projet Syroco.ShipResampler</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># -*- coding: utf-8 -*-
+
+# Imports
+import numpy as np
+import pandas as pd
+from geopy import distance
+import re
+import os
+from lambda_utils import import_dataframe_in_RDS
+
+
+# Conversion functions imports
+from geospatial_conv_functions import convert2dd, convert_lat2dms, convert_long2dms, convert_lat2dm, convert_long2dm
+
+
+class ShipResampler:
+    &#34;&#34;&#34;
+    Class representing a ship and the resampled data associated to this ship
+    ...
+
+    Attributes
+    -----------  
+    name : string
+        ship name
+            
+    resampling_windows : pandas.Timedelta
+        resampling windows
+          
+    def_agregation_function : function
+        default aggregation function for agregating numerical data i.e.
+        time window containing more than 1 value
+            
+    def_interpolation_method : &#39;nearest&#39;, &#39;zero&#39;, &#39;slinear&#39;, &#39;quadratic&#39;, &#39;cubic&#39;, &#39;spline&#39;, &#39;barycentric&#39;, &#39;polynomial&#39;
+        default method for interpolating numerical data i.e. approximation in the case where a
+        time window contains no value for a given variable
+          
+    interpolation_limit : int
+        time limit for interpolation ie the maximum number of consecutives time windows to 
+        interpolate 
+    
+    agregation_string_function : &#39;first&#39;, &#39;last&#39;
+        default aggregation method for managing string type data
+      
+    fill_method_str : &#39;ffill&#39;, &#39;bfill&#39;
+        method to complete the NaNs in the case of data of type string
+        
+    set_custom_agg_function : dict{string: function}
+        name of the variables in key and personalized aggregation function in value
+           
+    set_custom_inter_method : dict{string: string}
+        name of the variables in key and personalized interpolation method in value
+           
+    set_custom_inter_limit_time : dict{string: pandas.Timedelta}
+        name of the variables in key and interpolation limit time in value
+           
+    geospatial_format : &#39;dd&#39;, &#39;dm&#39;, &#39;dms&#39;
+        output geospatial data format
+            
+    dist_limit : float
+        maximum distance in km between predicted and real data
+            
+    preprocessed_data : DataFrame 
+        DataFrame containing all concatenated and resampled data
+    
+    &#34;&#34;&#34;
+    
+    def __init__(self, files, name=&#39;CMA CGM MAGELLAN&#39;, resampling_windows=pd.Timedelta(days=0, hours=0, minutes=15, seconds=0), interpolation_method=&#39;nearest&#39;,
+                        interpolation_limit_time=pd.Timedelta(days=1, hours=0, minutes=0, seconds=0),
+                        agregation_function=np.nanmean, set_custom_agg_function={}, 
+                        set_custom_inter_method={}, set_custom_inter_limit_time={}, geospatial_format=&#39;dd&#39;, 
+                        dist_limit=100, agregation_string_function=&#39;first&#39;, fill_method_str=&#39;pad&#39;):
+        &#34;&#34;&#34;
+        Constructor of ShipResampler object
+
+        Parameters
+        -----------
+        Identical to the attributes of the class except:
+            
+        files : list(Files)
+            list containing all VRS files and sensors measurement
+            corresponding to a ship
+            
+        interpolation_limit_time : pd.Timedelta
+            instead of self.interpolation_limit attribute, this parameters take 
+            the maximum time (not in terms of time windows) after which we stop the
+            interpolation if we don&#39;t have any new data
+            i.e. self.interpolation_limit = int(interpolation_limit_time/self.resampling_windows)
+    
+        &#34;&#34;&#34;  
+        self.resampling_windows = resampling_windows
+        self.def_agregation_function = agregation_function
+        self.def_interpolation_method = interpolation_method
+        self.interpolation_limit = int(interpolation_limit_time / resampling_windows)
+        self.set_custom_agg_function = set_custom_agg_function
+        self.set_custom_inter_method = set_custom_inter_method
+        self.set_custom_inter_limit_time = set_custom_inter_limit_time
+        self.agregation_string_function = agregation_string_function
+        self.fill_method_str = fill_method_str
+        self.dist_limit = dist_limit
+        self.name = name
+        
+        data = pd.DataFrame()
+        
+        # We concat all the files in a unique DataFrame
+        for file in files:
+            data = pd.concat([ data, file.merge_all_sheets() ], join=&#39;outer&#39;, ignore_index=True)
+                
+        self.preprocessed_data = data
+        self.set_columns_types()
+        
+        # Calculating initial angle formats
+        self.angle_format = {}
+        for deg_var in self.deg_columns:
+            if self.preprocessed_data[deg_var].min() &gt;= 0:
+                self.angle_format[deg_var] = &#39;0:360&#39;
+            else:
+                self.angle_format[deg_var] = &#39;-180:180&#39;
+    
+    
+    def set_date_index(self, time_var_name=&#39;Date/Time&#39;):
+        &#34;&#34;&#34;
+        Function which allows to put the temporal variable in the index of 
+        self.preprocessed_data DataFrame
+    
+        Parameters
+        ----------
+        
+        Returns
+        -------
+        &#34;&#34;&#34;
+        self.preprocessed_data = self.preprocessed_data.set_index(time_var_name)
+        self.preprocessed_data.index.name = time_var_name
+        
+        # Update columns types
+        self.set_columns_types()
+         
+        
+    def set_columns_types(self):
+        &#34;&#34;&#34;
+        Function which allows to create attributes that contains
+        the type of each variable present in self.preprocessed_data
+        
+        Parameters
+        ----------
+        
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Locate columns containing str or date values, and the others that are supposed numeric 
+        self.all_columns = self.preprocessed_data.columns.tolist()
+        self.string_columns = self.preprocessed_data.dtypes[self.preprocessed_data.dtypes == &#39;object&#39;].index.tolist()
+        self.date_columns = self.preprocessed_data.dtypes[self.preprocessed_data.dtypes == &#39;datetime64[ns]&#39;].index.tolist()
+        self.non_num_columns = self.date_columns + self.string_columns
+        self.num_columns = [col for col in self.preprocessed_data.columns.tolist() if col not in self.non_num_columns ]
+        
+        # Locate geospatial columns
+        self.latitude_columns = list( self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;Latitude&#39;)] )
+        self.longitude_columns = list( self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;Longitude&#39;)] )
+        
+        # Locate angular columns
+        deg_columns = []
+        deg_columns += list(self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;[deg]&#39;, regex=False)])
+        deg_columns += list(self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;(°)&#39;, regex=False)]) 
+        # Retire geospatial variables from the angular variables
+        r = re.compile(&#34;^((?!Latitude|Longitude).)*$&#34;) 
+        deg_columns = list(filter(r.match, deg_columns)) 
+        self.deg_columns = deg_columns          
+        
+        return self
+        
+    
+    def nans_filter(self):
+        &#34;&#34;&#34;
+        Function which allows to delete all time windows
+        containing NaNs in self.preprocessed_data
+        
+        Parameters
+        ----------
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Deleting lines which contains NaNs values
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Time windows number before NaNs suppression: &#39;, self.preprocessed_data.shape)
+        self.preprocessed_data.dropna(axis=0, how=&#39;any&#39;, inplace=True)
+        print(&#39;Time windows number after NaNs suppression: &#39;, self.preprocessed_data.shape)        
+        
+        return self
+    
+    
+    def resample_and_interpolate(self):
+        &#34;&#34;&#34;
+        Function that resamples, aggregates and interpolates concatenated data in
+        self.preprocessed_data
+        
+        Parameters
+        ----------
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        self.set_date_index()
+        
+        df_for_index_creation = pd.DataFrame(index=self.preprocessed_data.index)
+        df_for_index_creation[&#39;col1&#39;] = 1
+        
+        # Create an empty dataframe with resampled index
+        index = df_for_index_creation.iloc[:,0].resample(self.resampling_windows)\
+                                            .agg(self.def_agregation_function)\
+                                            .index.tolist()
+                                            
+        res = pd.DataFrame(columns=self.all_columns, index=index)
+        res.index.name = self.preprocessed_data.index.name
+                                           
+    
+        # Numerical variables processing
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Numerical variables processing...\n&#39;)
+        for var in self.num_columns:
+            print(var)
+            # We initialize the default agregation, interpolation and interpolation limit values
+            custom_agg_func = self.def_agregation_function
+            custom_inter_method = self.def_interpolation_method
+            custom_inter_limit = self.interpolation_limit
+                
+            if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_agg_function):
+                custom_agg_func = self.set_custom_agg_function[&#39;VRS&#39;]
+            if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_inter_method):
+                custom_inter_method = self.set_custom_inter_method[&#39;VRS&#39;]
+            if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_inter_limit_time):
+                custom_inter_limit = int( self.set_custom_inter_limit_time[&#39;VRS&#39;] / self.resampling_windows )
+                
+            if var in self.set_custom_agg_function:
+                custom_agg_func = self.set_custom_agg_function[var]
+            if var in self.set_custom_inter_method:
+                custom_inter_method = self.set_custom_inter_method[var]
+            if var in self.set_custom_inter_limit_time:
+                custom_inter_limit = int( self.set_custom_inter_limit_time[var] / self.resampling_windows )
+                    
+            res.loc[:, var] = self.preprocessed_data.loc[:, var]\
+                                                    .resample(self.resampling_windows)\
+                                                    .agg(custom_agg_func)\
+                                                    .interpolate(custom_inter_method, limit=int( custom_inter_limit/2 ), limit_direction=&#39;both&#39;)\
+                                                    .astype(float)
+        
+        # Non-numerical variables processing
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Non-numerical variables processing...\n&#39;)
+        for var in self.non_num_columns:
+            print(var)
+            # We initialize the default agregation and interpolation methods for strings
+            custom_agg_func = self.agregation_string_function
+            custom_fill_method = self.fill_method_str
+            
+            if var in self.set_custom_agg_function:
+                custom_agg_func = self.set_custom_agg_function[var]
+            if var in self.set_custom_inter_method:
+                custom_inter_method = self.set_custom_inter_method[var]
+        
+            res.loc[:, var] = self.preprocessed_data.loc[:, var]\
+                                                    .resample(self.resampling_windows)\
+                                                    .agg(custom_agg_func)\
+                                                    .fillna(method=custom_fill_method)
+               
+        self.preprocessed_data = res
+        
+        return self
+                                                    
+                                                                                 
+    def change_spatial_format(self, geospatial_format):
+        &#34;&#34;&#34;
+        Function which allows to change the geospatial variables format
+        
+        Parameters
+        ----------
+        geospatial_format : &#39;dms&#39;, &#39;dm&#39;, &#39;dd&#39;
+             desired output geospatial data format
+             
+        Returns
+        -------
+        &#34;&#34;&#34;
+    
+        # Errors gestion
+        if geospatial_format != &#39;dms&#39; and geospatial_format != &#39;dm&#39; and geospatial_format != &#39;dd&#39;:
+            raise ValueError(&#34;The geospatial conversion format must take one of the following values: &#39;dms&#39;, &#39;dm&#39;, &#39;dd&#39;&#34;)
+            
+        # Convert geo-spatial coordinates in right format
+        if geospatial_format == &#39;dm&#39;:
+            lat_func = convert_lat2dm
+            long_func = convert_long2dm
+        elif geospatial_format == &#39;dms&#39;:
+            lat_func = convert_lat2dms
+            long_func = convert_long2dms
+        elif geospatial_format == &#39;dd&#39;:
+            lat_func = convert2dd
+            long_func = convert2dd
+            
+        # Latitudes conversion   
+        self.preprocessed_data.loc[:, self.latitude_columns] = self.preprocessed_data.loc[:, self.latitude_columns]\
+                                                                  .applymap(lat_func)
+        # Longitudes conversion                                             
+        self.preprocessed_data.loc[:, self.longitude_columns] = self.preprocessed_data.loc[:, self.longitude_columns]\
+                                                                   .applymap(long_func)
+                                                                  
+        self.set_columns_types()
+        
+        return self
+    
+    
+    def change_deg_format(self, auto_detect_deg_var=True, imposed_columns=[],
+                          deg_format=&#39;continuous&#39;, include_geo_var=True):
+        &#34;&#34;&#34;
+        Function that converts angular data format.
+        
+        Parameters
+        ----------
+        auto_detect_deg_var : boolean
+            The function auto-detect the variables of angular types
+            by selectionning the columns names containing [deg] or (°)
+             
+        imposed_columns : list[string]
+            force some variables to be treated as angular data
+            
+        deg_format : &#39;continuous&#39;, &#39;0:360&#39;, &#39;-180:180&#39;, &#39;initial&#39;
+            conversion format
+            
+        include_geo_var : boolean
+            whether to consider geospatial variables as angular data
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Errors gestion
+        if deg_format != &#39;continuous&#39; and deg_format != &#39;0:360&#39; and deg_format != &#39;-180:180&#39; and deg_format != &#39;initial&#39;:
+            raise ValueError(&#34;The angular conversion format must take one of the following values: &#39;continuous&#39;, &#39;0:360&#39;, &#39;-180:180&#39;, &#39;initial&#39;&#34;)
+            
+        # Retrieving angle-type variables
+        deg_columns = []
+        
+        # Automatic detection of variables that contain angular data
+        if auto_detect_deg_var == True:
+            deg_columns += self.deg_columns
+        
+        # We add the imposed variables
+        if deg_format != &#39;initial&#39;:
+            deg_columns += imposed_columns 
+        
+        # We add geospatial variables
+        if include_geo_var == True:
+            deg_columns += self.latitude_columns + self.longitude_columns
+            
+            # Test that the geospatial variables are
+            # of type decimal degree
+            types = self.preprocessed_data[self.latitude_columns + self.longitude_columns].dtypes
+            for t in types:
+                if t != &#39;float64&#39;:
+                    raise ValueError(&#34;The geospatial variables must be in the format &#39;decimal degre&#39;&#34;)
+           
+        # We remove the duplicates (if variables already detected were also present in the imposed variables)
+        deg_columns = list( np.unique(deg_columns) )
+    
+            
+        if deg_format == &#39;continuous&#39;:
+            for deg_var in deg_columns:
+                self.preprocessed_data.loc[~self.preprocessed_data[deg_var].isna(), deg_var] = np.rad2deg(
+                    np.unwrap(np.deg2rad(self.preprocessed_data.loc[~self.preprocessed_data[deg_var].isna(), deg_var])))
+        elif deg_format == &#39;0:360&#39;:
+            self.preprocessed_data[deg_columns] = self.preprocessed_data[deg_columns].\
+                                                    applymap(lambda x: x%360)
+        elif deg_format == &#39;-180:180&#39;:
+            self.preprocessed_data[deg_columns] = self.preprocessed_data[deg_columns].\
+                                                    applymap(lambda x: x%360-360 if (x%360 &gt; 180) else x%360)
+        elif deg_format == &#39;initial&#39;:
+            for deg_var in deg_columns: 
+                if deg_var in self.latitude_columns + self.longitude_columns:
+                    conv_function = lambda x: x%360-360 if (x%360 &gt; 180) else x%360
+                else:
+                    if self.angle_format[deg_var] == &#39;0:360&#39;:
+                        conv_function = lambda x: x%360
+                    elif self.angle_format[deg_var] == &#39;-180:180&#39;:
+                        conv_function = lambda x: x%360-360 if (x%360 &gt; 180) else x%360
+                
+                self.preprocessed_data[deg_var] = self.preprocessed_data[deg_var].\
+                                                    apply(conv_function)
+                                                    
+        return self
+        
+        
+    def distance_limit_filter(self, coord_pred=(&#39;BonVoyage_Latitude&#39;,&#39;BonVoyage_Longitude&#39;),
+                              coord_reel=(&#39;NMEA GPS_Latitude [deg]&#39;,&#39;NMEA GPS_Longitude [deg]&#39;)):
+        &#34;&#34;&#34;
+        Function that allows you to filter time windows when
+        real and predicted data differ too much
+    
+        Parameters
+        ----------
+        
+        coord_pred : tuple(string)
+            tuple containing variables names containing the Latitude and Longitude of the predicted
+            spatial coordinates
+            
+        coord_reel : tuple(string)
+            tuple containing variables names containing the Latitude and Longitude of the real
+            spatial coordinates
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Errors gestion
+        # Test that the geospatial variables to compare are in the form of decimal degree
+        types = self.preprocessed_data[[coord_pred[0], coord_pred[1], coord_reel[0], coord_reel[1] ]].dtypes
+        for t in types:
+            if t != &#39;float64&#39;:
+                raise ValueError(&#34;The geospatial variables to compare must be in the format &#39;decimal degre&#39;&#34;)
+        
+        # Check if prediction and reality don&#39;t differs more than a certain distance in km
+        distances_df = self.preprocessed_data.apply(lambda x: distance.distance((x[coord_pred[0]], x[coord_pred[1]]), 
+                                (x[coord_reel[0]], x[coord_reel[1]])).km if sum([np.isnan(x[coord_pred[0]]),np.isnan(x[coord_pred[1]]),np.isnan(x[coord_reel[0]]),np.isnan(x[coord_reel[1]])])==0 else 0, axis=1 )
+    
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Time windows number before outlier distances suppression: &#39;, self.preprocessed_data.shape)
+        self.preprocessed_data = self.preprocessed_data.loc[distances_df &lt; self.dist_limit , :]
+        print(&#39;Time windows number after outlier distances suppression: &#39;, self.preprocessed_data.shape)
+
+        return self
+   
+    
+    def save_preprocessed_data(self, path, sheet_name=&#39;preprocessed_data&#39;, reset_index=True):
+        &#34;&#34;&#34;
+        Function that allows to save the preprocessed_data DataFrame
+        in an .xlsx or .csv file
+        
+        Parameters
+        ----------
+        path : string
+             path name of the .xlsx or .csv file to save the data
+        reset_index : boolean
+            if True, set the time variable as a column, if False as an index 
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        _, extension = os.path.splitext(path)
+        
+        if extension == &#39;.csv&#39;:
+            if reset_index == True:
+                self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}).to_csv(path, index=False)
+            else:
+                self.preprocessed_data.to_csv(path)
+                
+        elif extension == &#39;.xlsx&#39;:
+            writer = pd.ExcelWriter(path)
+            if reset_index == True:
+                self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}).to_excel(writer, sheet_name=sheet_name, index=False)
+            else:
+                self.preprocessed_data.to_excel(writer, sheet_name=sheet_name)
+            
+            # Close the Pandas Excel writer and output the Excel file.
+            writer.save()
+            
+        
+    def save_preprocessed_data_in_RDS(self, table_name):
+        &#34;&#34;&#34;
+        Function to save preprocessed data in AWS RDS
+        
+        Parameters
+        ----------
+        table_name : string
+             table name
+             
+        Returns
+        -------
+        new_table_name : string
+            the renamed table name if the table already exists in the RDS bdd
+        &#34;&#34;&#34;
+        new_table_name = import_dataframe_in_RDS(df=self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}), table_name=table_name)
+        
+        return new_table_name
+    
+    
+    
+    </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Projet Syroco.ShipResampler.ShipResampler"><code class="flex name class">
+<span>class <span class="ident">ShipResampler</span></span>
+<span>(</span><span>files, name='CMA CGM MAGELLAN', resampling_windows=Timedelta('0 days 00:15:00'), interpolation_method='nearest', interpolation_limit_time=Timedelta('1 days 00:00:00'), agregation_function=&lt;function nanmean&gt;, set_custom_agg_function={}, set_custom_inter_method={}, set_custom_inter_limit_time={}, geospatial_format='dd', dist_limit=100, agregation_string_function='first', fill_method_str='pad')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class representing a ship and the resampled data associated to this ship
+&hellip;</p>
+<h2 id="attributes">Attributes</h2>
+<p>name : string
+ship name</p>
+<p>resampling_windows : pandas.Timedelta
+resampling windows</p>
+<p>def_agregation_function : function
+default aggregation function for agregating numerical data i.e.
+time window containing more than 1 value</p>
+<p>def_interpolation_method : 'nearest', 'zero', 'slinear', 'quadratic', 'cubic', 'spline', 'barycentric', 'polynomial'
+default method for interpolating numerical data i.e. approximation in the case where a
+time window contains no value for a given variable</p>
+<p>interpolation_limit : int
+time limit for interpolation ie the maximum number of consecutives time windows to
+interpolate </p>
+<p>agregation_string_function : 'first', 'last'
+default aggregation method for managing string type data</p>
+<p>fill_method_str : 'ffill', 'bfill'
+method to complete the NaNs in the case of data of type string</p>
+<p>set_custom_agg_function : dict{string: function}
+name of the variables in key and personalized aggregation function in value</p>
+<p>set_custom_inter_method : dict{string: string}
+name of the variables in key and personalized interpolation method in value</p>
+<p>set_custom_inter_limit_time : dict{string: pandas.Timedelta}
+name of the variables in key and interpolation limit time in value</p>
+<p>geospatial_format : 'dd', 'dm', 'dms'
+output geospatial data format</p>
+<p>dist_limit : float
+maximum distance in km between predicted and real data</p>
+<p>preprocessed_data : DataFrame
+DataFrame containing all concatenated and resampled data</p>
+<p>Constructor of ShipResampler object</p>
+<h2 id="parameters">Parameters</h2>
+<p>Identical to the attributes of the class except:</p>
+<dl>
+<dt><strong><code>files</code></strong> :&ensp;<code>list(Files)</code></dt>
+<dd>list containing all VRS files and sensors measurement
+corresponding to a ship</dd>
+<dt><strong><code>interpolation_limit_time</code></strong> :&ensp;<code>pd.Timedelta</code></dt>
+<dd>instead of self.interpolation_limit attribute, this parameters take
+the maximum time (not in terms of time windows) after which we stop the
+interpolation if we don't have any new data
+i.e. self.interpolation_limit = int(interpolation_limit_time/self.resampling_windows)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ShipResampler:
+    &#34;&#34;&#34;
+    Class representing a ship and the resampled data associated to this ship
+    ...
+
+    Attributes
+    -----------  
+    name : string
+        ship name
+            
+    resampling_windows : pandas.Timedelta
+        resampling windows
+          
+    def_agregation_function : function
+        default aggregation function for agregating numerical data i.e.
+        time window containing more than 1 value
+            
+    def_interpolation_method : &#39;nearest&#39;, &#39;zero&#39;, &#39;slinear&#39;, &#39;quadratic&#39;, &#39;cubic&#39;, &#39;spline&#39;, &#39;barycentric&#39;, &#39;polynomial&#39;
+        default method for interpolating numerical data i.e. approximation in the case where a
+        time window contains no value for a given variable
+          
+    interpolation_limit : int
+        time limit for interpolation ie the maximum number of consecutives time windows to 
+        interpolate 
+    
+    agregation_string_function : &#39;first&#39;, &#39;last&#39;
+        default aggregation method for managing string type data
+      
+    fill_method_str : &#39;ffill&#39;, &#39;bfill&#39;
+        method to complete the NaNs in the case of data of type string
+        
+    set_custom_agg_function : dict{string: function}
+        name of the variables in key and personalized aggregation function in value
+           
+    set_custom_inter_method : dict{string: string}
+        name of the variables in key and personalized interpolation method in value
+           
+    set_custom_inter_limit_time : dict{string: pandas.Timedelta}
+        name of the variables in key and interpolation limit time in value
+           
+    geospatial_format : &#39;dd&#39;, &#39;dm&#39;, &#39;dms&#39;
+        output geospatial data format
+            
+    dist_limit : float
+        maximum distance in km between predicted and real data
+            
+    preprocessed_data : DataFrame 
+        DataFrame containing all concatenated and resampled data
+    
+    &#34;&#34;&#34;
+    
+    def __init__(self, files, name=&#39;CMA CGM MAGELLAN&#39;, resampling_windows=pd.Timedelta(days=0, hours=0, minutes=15, seconds=0), interpolation_method=&#39;nearest&#39;,
+                        interpolation_limit_time=pd.Timedelta(days=1, hours=0, minutes=0, seconds=0),
+                        agregation_function=np.nanmean, set_custom_agg_function={}, 
+                        set_custom_inter_method={}, set_custom_inter_limit_time={}, geospatial_format=&#39;dd&#39;, 
+                        dist_limit=100, agregation_string_function=&#39;first&#39;, fill_method_str=&#39;pad&#39;):
+        &#34;&#34;&#34;
+        Constructor of ShipResampler object
+
+        Parameters
+        -----------
+        Identical to the attributes of the class except:
+            
+        files : list(Files)
+            list containing all VRS files and sensors measurement
+            corresponding to a ship
+            
+        interpolation_limit_time : pd.Timedelta
+            instead of self.interpolation_limit attribute, this parameters take 
+            the maximum time (not in terms of time windows) after which we stop the
+            interpolation if we don&#39;t have any new data
+            i.e. self.interpolation_limit = int(interpolation_limit_time/self.resampling_windows)
+    
+        &#34;&#34;&#34;  
+        self.resampling_windows = resampling_windows
+        self.def_agregation_function = agregation_function
+        self.def_interpolation_method = interpolation_method
+        self.interpolation_limit = int(interpolation_limit_time / resampling_windows)
+        self.set_custom_agg_function = set_custom_agg_function
+        self.set_custom_inter_method = set_custom_inter_method
+        self.set_custom_inter_limit_time = set_custom_inter_limit_time
+        self.agregation_string_function = agregation_string_function
+        self.fill_method_str = fill_method_str
+        self.dist_limit = dist_limit
+        self.name = name
+        
+        data = pd.DataFrame()
+        
+        # We concat all the files in a unique DataFrame
+        for file in files:
+            data = pd.concat([ data, file.merge_all_sheets() ], join=&#39;outer&#39;, ignore_index=True)
+                
+        self.preprocessed_data = data
+        self.set_columns_types()
+        
+        # Calculating initial angle formats
+        self.angle_format = {}
+        for deg_var in self.deg_columns:
+            if self.preprocessed_data[deg_var].min() &gt;= 0:
+                self.angle_format[deg_var] = &#39;0:360&#39;
+            else:
+                self.angle_format[deg_var] = &#39;-180:180&#39;
+    
+    
+    def set_date_index(self, time_var_name=&#39;Date/Time&#39;):
+        &#34;&#34;&#34;
+        Function which allows to put the temporal variable in the index of 
+        self.preprocessed_data DataFrame
+    
+        Parameters
+        ----------
+        
+        Returns
+        -------
+        &#34;&#34;&#34;
+        self.preprocessed_data = self.preprocessed_data.set_index(time_var_name)
+        self.preprocessed_data.index.name = time_var_name
+        
+        # Update columns types
+        self.set_columns_types()
+         
+        
+    def set_columns_types(self):
+        &#34;&#34;&#34;
+        Function which allows to create attributes that contains
+        the type of each variable present in self.preprocessed_data
+        
+        Parameters
+        ----------
+        
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Locate columns containing str or date values, and the others that are supposed numeric 
+        self.all_columns = self.preprocessed_data.columns.tolist()
+        self.string_columns = self.preprocessed_data.dtypes[self.preprocessed_data.dtypes == &#39;object&#39;].index.tolist()
+        self.date_columns = self.preprocessed_data.dtypes[self.preprocessed_data.dtypes == &#39;datetime64[ns]&#39;].index.tolist()
+        self.non_num_columns = self.date_columns + self.string_columns
+        self.num_columns = [col for col in self.preprocessed_data.columns.tolist() if col not in self.non_num_columns ]
+        
+        # Locate geospatial columns
+        self.latitude_columns = list( self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;Latitude&#39;)] )
+        self.longitude_columns = list( self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;Longitude&#39;)] )
+        
+        # Locate angular columns
+        deg_columns = []
+        deg_columns += list(self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;[deg]&#39;, regex=False)])
+        deg_columns += list(self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;(°)&#39;, regex=False)]) 
+        # Retire geospatial variables from the angular variables
+        r = re.compile(&#34;^((?!Latitude|Longitude).)*$&#34;) 
+        deg_columns = list(filter(r.match, deg_columns)) 
+        self.deg_columns = deg_columns          
+        
+        return self
+        
+    
+    def nans_filter(self):
+        &#34;&#34;&#34;
+        Function which allows to delete all time windows
+        containing NaNs in self.preprocessed_data
+        
+        Parameters
+        ----------
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Deleting lines which contains NaNs values
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Time windows number before NaNs suppression: &#39;, self.preprocessed_data.shape)
+        self.preprocessed_data.dropna(axis=0, how=&#39;any&#39;, inplace=True)
+        print(&#39;Time windows number after NaNs suppression: &#39;, self.preprocessed_data.shape)        
+        
+        return self
+    
+    
+    def resample_and_interpolate(self):
+        &#34;&#34;&#34;
+        Function that resamples, aggregates and interpolates concatenated data in
+        self.preprocessed_data
+        
+        Parameters
+        ----------
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        self.set_date_index()
+        
+        df_for_index_creation = pd.DataFrame(index=self.preprocessed_data.index)
+        df_for_index_creation[&#39;col1&#39;] = 1
+        
+        # Create an empty dataframe with resampled index
+        index = df_for_index_creation.iloc[:,0].resample(self.resampling_windows)\
+                                            .agg(self.def_agregation_function)\
+                                            .index.tolist()
+                                            
+        res = pd.DataFrame(columns=self.all_columns, index=index)
+        res.index.name = self.preprocessed_data.index.name
+                                           
+    
+        # Numerical variables processing
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Numerical variables processing...\n&#39;)
+        for var in self.num_columns:
+            print(var)
+            # We initialize the default agregation, interpolation and interpolation limit values
+            custom_agg_func = self.def_agregation_function
+            custom_inter_method = self.def_interpolation_method
+            custom_inter_limit = self.interpolation_limit
+                
+            if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_agg_function):
+                custom_agg_func = self.set_custom_agg_function[&#39;VRS&#39;]
+            if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_inter_method):
+                custom_inter_method = self.set_custom_inter_method[&#39;VRS&#39;]
+            if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_inter_limit_time):
+                custom_inter_limit = int( self.set_custom_inter_limit_time[&#39;VRS&#39;] / self.resampling_windows )
+                
+            if var in self.set_custom_agg_function:
+                custom_agg_func = self.set_custom_agg_function[var]
+            if var in self.set_custom_inter_method:
+                custom_inter_method = self.set_custom_inter_method[var]
+            if var in self.set_custom_inter_limit_time:
+                custom_inter_limit = int( self.set_custom_inter_limit_time[var] / self.resampling_windows )
+                    
+            res.loc[:, var] = self.preprocessed_data.loc[:, var]\
+                                                    .resample(self.resampling_windows)\
+                                                    .agg(custom_agg_func)\
+                                                    .interpolate(custom_inter_method, limit=int( custom_inter_limit/2 ), limit_direction=&#39;both&#39;)\
+                                                    .astype(float)
+        
+        # Non-numerical variables processing
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Non-numerical variables processing...\n&#39;)
+        for var in self.non_num_columns:
+            print(var)
+            # We initialize the default agregation and interpolation methods for strings
+            custom_agg_func = self.agregation_string_function
+            custom_fill_method = self.fill_method_str
+            
+            if var in self.set_custom_agg_function:
+                custom_agg_func = self.set_custom_agg_function[var]
+            if var in self.set_custom_inter_method:
+                custom_inter_method = self.set_custom_inter_method[var]
+        
+            res.loc[:, var] = self.preprocessed_data.loc[:, var]\
+                                                    .resample(self.resampling_windows)\
+                                                    .agg(custom_agg_func)\
+                                                    .fillna(method=custom_fill_method)
+               
+        self.preprocessed_data = res
+        
+        return self
+                                                    
+                                                                                 
+    def change_spatial_format(self, geospatial_format):
+        &#34;&#34;&#34;
+        Function which allows to change the geospatial variables format
+        
+        Parameters
+        ----------
+        geospatial_format : &#39;dms&#39;, &#39;dm&#39;, &#39;dd&#39;
+             desired output geospatial data format
+             
+        Returns
+        -------
+        &#34;&#34;&#34;
+    
+        # Errors gestion
+        if geospatial_format != &#39;dms&#39; and geospatial_format != &#39;dm&#39; and geospatial_format != &#39;dd&#39;:
+            raise ValueError(&#34;The geospatial conversion format must take one of the following values: &#39;dms&#39;, &#39;dm&#39;, &#39;dd&#39;&#34;)
+            
+        # Convert geo-spatial coordinates in right format
+        if geospatial_format == &#39;dm&#39;:
+            lat_func = convert_lat2dm
+            long_func = convert_long2dm
+        elif geospatial_format == &#39;dms&#39;:
+            lat_func = convert_lat2dms
+            long_func = convert_long2dms
+        elif geospatial_format == &#39;dd&#39;:
+            lat_func = convert2dd
+            long_func = convert2dd
+            
+        # Latitudes conversion   
+        self.preprocessed_data.loc[:, self.latitude_columns] = self.preprocessed_data.loc[:, self.latitude_columns]\
+                                                                  .applymap(lat_func)
+        # Longitudes conversion                                             
+        self.preprocessed_data.loc[:, self.longitude_columns] = self.preprocessed_data.loc[:, self.longitude_columns]\
+                                                                   .applymap(long_func)
+                                                                  
+        self.set_columns_types()
+        
+        return self
+    
+    
+    def change_deg_format(self, auto_detect_deg_var=True, imposed_columns=[],
+                          deg_format=&#39;continuous&#39;, include_geo_var=True):
+        &#34;&#34;&#34;
+        Function that converts angular data format.
+        
+        Parameters
+        ----------
+        auto_detect_deg_var : boolean
+            The function auto-detect the variables of angular types
+            by selectionning the columns names containing [deg] or (°)
+             
+        imposed_columns : list[string]
+            force some variables to be treated as angular data
+            
+        deg_format : &#39;continuous&#39;, &#39;0:360&#39;, &#39;-180:180&#39;, &#39;initial&#39;
+            conversion format
+            
+        include_geo_var : boolean
+            whether to consider geospatial variables as angular data
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Errors gestion
+        if deg_format != &#39;continuous&#39; and deg_format != &#39;0:360&#39; and deg_format != &#39;-180:180&#39; and deg_format != &#39;initial&#39;:
+            raise ValueError(&#34;The angular conversion format must take one of the following values: &#39;continuous&#39;, &#39;0:360&#39;, &#39;-180:180&#39;, &#39;initial&#39;&#34;)
+            
+        # Retrieving angle-type variables
+        deg_columns = []
+        
+        # Automatic detection of variables that contain angular data
+        if auto_detect_deg_var == True:
+            deg_columns += self.deg_columns
+        
+        # We add the imposed variables
+        if deg_format != &#39;initial&#39;:
+            deg_columns += imposed_columns 
+        
+        # We add geospatial variables
+        if include_geo_var == True:
+            deg_columns += self.latitude_columns + self.longitude_columns
+            
+            # Test that the geospatial variables are
+            # of type decimal degree
+            types = self.preprocessed_data[self.latitude_columns + self.longitude_columns].dtypes
+            for t in types:
+                if t != &#39;float64&#39;:
+                    raise ValueError(&#34;The geospatial variables must be in the format &#39;decimal degre&#39;&#34;)
+           
+        # We remove the duplicates (if variables already detected were also present in the imposed variables)
+        deg_columns = list( np.unique(deg_columns) )
+    
+            
+        if deg_format == &#39;continuous&#39;:
+            for deg_var in deg_columns:
+                self.preprocessed_data.loc[~self.preprocessed_data[deg_var].isna(), deg_var] = np.rad2deg(
+                    np.unwrap(np.deg2rad(self.preprocessed_data.loc[~self.preprocessed_data[deg_var].isna(), deg_var])))
+        elif deg_format == &#39;0:360&#39;:
+            self.preprocessed_data[deg_columns] = self.preprocessed_data[deg_columns].\
+                                                    applymap(lambda x: x%360)
+        elif deg_format == &#39;-180:180&#39;:
+            self.preprocessed_data[deg_columns] = self.preprocessed_data[deg_columns].\
+                                                    applymap(lambda x: x%360-360 if (x%360 &gt; 180) else x%360)
+        elif deg_format == &#39;initial&#39;:
+            for deg_var in deg_columns: 
+                if deg_var in self.latitude_columns + self.longitude_columns:
+                    conv_function = lambda x: x%360-360 if (x%360 &gt; 180) else x%360
+                else:
+                    if self.angle_format[deg_var] == &#39;0:360&#39;:
+                        conv_function = lambda x: x%360
+                    elif self.angle_format[deg_var] == &#39;-180:180&#39;:
+                        conv_function = lambda x: x%360-360 if (x%360 &gt; 180) else x%360
+                
+                self.preprocessed_data[deg_var] = self.preprocessed_data[deg_var].\
+                                                    apply(conv_function)
+                                                    
+        return self
+        
+        
+    def distance_limit_filter(self, coord_pred=(&#39;BonVoyage_Latitude&#39;,&#39;BonVoyage_Longitude&#39;),
+                              coord_reel=(&#39;NMEA GPS_Latitude [deg]&#39;,&#39;NMEA GPS_Longitude [deg]&#39;)):
+        &#34;&#34;&#34;
+        Function that allows you to filter time windows when
+        real and predicted data differ too much
+    
+        Parameters
+        ----------
+        
+        coord_pred : tuple(string)
+            tuple containing variables names containing the Latitude and Longitude of the predicted
+            spatial coordinates
+            
+        coord_reel : tuple(string)
+            tuple containing variables names containing the Latitude and Longitude of the real
+            spatial coordinates
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        # Errors gestion
+        # Test that the geospatial variables to compare are in the form of decimal degree
+        types = self.preprocessed_data[[coord_pred[0], coord_pred[1], coord_reel[0], coord_reel[1] ]].dtypes
+        for t in types:
+            if t != &#39;float64&#39;:
+                raise ValueError(&#34;The geospatial variables to compare must be in the format &#39;decimal degre&#39;&#34;)
+        
+        # Check if prediction and reality don&#39;t differs more than a certain distance in km
+        distances_df = self.preprocessed_data.apply(lambda x: distance.distance((x[coord_pred[0]], x[coord_pred[1]]), 
+                                (x[coord_reel[0]], x[coord_reel[1]])).km if sum([np.isnan(x[coord_pred[0]]),np.isnan(x[coord_pred[1]]),np.isnan(x[coord_reel[0]]),np.isnan(x[coord_reel[1]])])==0 else 0, axis=1 )
+    
+        print(&#39;\n-------------------------------------&#39;)
+        print(&#39;Time windows number before outlier distances suppression: &#39;, self.preprocessed_data.shape)
+        self.preprocessed_data = self.preprocessed_data.loc[distances_df &lt; self.dist_limit , :]
+        print(&#39;Time windows number after outlier distances suppression: &#39;, self.preprocessed_data.shape)
+
+        return self
+   
+    
+    def save_preprocessed_data(self, path, sheet_name=&#39;preprocessed_data&#39;, reset_index=True):
+        &#34;&#34;&#34;
+        Function that allows to save the preprocessed_data DataFrame
+        in an .xlsx or .csv file
+        
+        Parameters
+        ----------
+        path : string
+             path name of the .xlsx or .csv file to save the data
+        reset_index : boolean
+            if True, set the time variable as a column, if False as an index 
+            
+        Returns
+        -------
+        &#34;&#34;&#34;
+        _, extension = os.path.splitext(path)
+        
+        if extension == &#39;.csv&#39;:
+            if reset_index == True:
+                self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}).to_csv(path, index=False)
+            else:
+                self.preprocessed_data.to_csv(path)
+                
+        elif extension == &#39;.xlsx&#39;:
+            writer = pd.ExcelWriter(path)
+            if reset_index == True:
+                self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}).to_excel(writer, sheet_name=sheet_name, index=False)
+            else:
+                self.preprocessed_data.to_excel(writer, sheet_name=sheet_name)
+            
+            # Close the Pandas Excel writer and output the Excel file.
+            writer.save()
+            
+        
+    def save_preprocessed_data_in_RDS(self, table_name):
+        &#34;&#34;&#34;
+        Function to save preprocessed data in AWS RDS
+        
+        Parameters
+        ----------
+        table_name : string
+             table name
+             
+        Returns
+        -------
+        new_table_name : string
+            the renamed table name if the table already exists in the RDS bdd
+        &#34;&#34;&#34;
+        new_table_name = import_dataframe_in_RDS(df=self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}), table_name=table_name)
+        
+        return new_table_name</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.change_deg_format"><code class="name flex">
+<span>def <span class="ident">change_deg_format</span></span>(<span>self, auto_detect_deg_var=True, imposed_columns=[], deg_format='continuous', include_geo_var=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function that converts angular data format.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>auto_detect_deg_var</code></strong> :&ensp;<code>boolean</code></dt>
+<dd>The function auto-detect the variables of angular types
+by selectionning the columns names containing [deg] or (°)</dd>
+<dt><strong><code>imposed_columns</code></strong> :&ensp;<code>list[string]</code></dt>
+<dd>force some variables to be treated as angular data</dd>
+<dt><strong><code>deg_format</code></strong> :&ensp;<code>'continuous', '0:360', '-180:180', 'initial'</code></dt>
+<dd>conversion format</dd>
+<dt><strong><code>include_geo_var</code></strong> :&ensp;<code>boolean</code></dt>
+<dd>whether to consider geospatial variables as angular data</dd>
+</dl>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_deg_format(self, auto_detect_deg_var=True, imposed_columns=[],
+                      deg_format=&#39;continuous&#39;, include_geo_var=True):
+    &#34;&#34;&#34;
+    Function that converts angular data format.
+    
+    Parameters
+    ----------
+    auto_detect_deg_var : boolean
+        The function auto-detect the variables of angular types
+        by selectionning the columns names containing [deg] or (°)
+         
+    imposed_columns : list[string]
+        force some variables to be treated as angular data
+        
+    deg_format : &#39;continuous&#39;, &#39;0:360&#39;, &#39;-180:180&#39;, &#39;initial&#39;
+        conversion format
+        
+    include_geo_var : boolean
+        whether to consider geospatial variables as angular data
+        
+    Returns
+    -------
+    &#34;&#34;&#34;
+    # Errors gestion
+    if deg_format != &#39;continuous&#39; and deg_format != &#39;0:360&#39; and deg_format != &#39;-180:180&#39; and deg_format != &#39;initial&#39;:
+        raise ValueError(&#34;The angular conversion format must take one of the following values: &#39;continuous&#39;, &#39;0:360&#39;, &#39;-180:180&#39;, &#39;initial&#39;&#34;)
+        
+    # Retrieving angle-type variables
+    deg_columns = []
+    
+    # Automatic detection of variables that contain angular data
+    if auto_detect_deg_var == True:
+        deg_columns += self.deg_columns
+    
+    # We add the imposed variables
+    if deg_format != &#39;initial&#39;:
+        deg_columns += imposed_columns 
+    
+    # We add geospatial variables
+    if include_geo_var == True:
+        deg_columns += self.latitude_columns + self.longitude_columns
+        
+        # Test that the geospatial variables are
+        # of type decimal degree
+        types = self.preprocessed_data[self.latitude_columns + self.longitude_columns].dtypes
+        for t in types:
+            if t != &#39;float64&#39;:
+                raise ValueError(&#34;The geospatial variables must be in the format &#39;decimal degre&#39;&#34;)
+       
+    # We remove the duplicates (if variables already detected were also present in the imposed variables)
+    deg_columns = list( np.unique(deg_columns) )
+
+        
+    if deg_format == &#39;continuous&#39;:
+        for deg_var in deg_columns:
+            self.preprocessed_data.loc[~self.preprocessed_data[deg_var].isna(), deg_var] = np.rad2deg(
+                np.unwrap(np.deg2rad(self.preprocessed_data.loc[~self.preprocessed_data[deg_var].isna(), deg_var])))
+    elif deg_format == &#39;0:360&#39;:
+        self.preprocessed_data[deg_columns] = self.preprocessed_data[deg_columns].\
+                                                applymap(lambda x: x%360)
+    elif deg_format == &#39;-180:180&#39;:
+        self.preprocessed_data[deg_columns] = self.preprocessed_data[deg_columns].\
+                                                applymap(lambda x: x%360-360 if (x%360 &gt; 180) else x%360)
+    elif deg_format == &#39;initial&#39;:
+        for deg_var in deg_columns: 
+            if deg_var in self.latitude_columns + self.longitude_columns:
+                conv_function = lambda x: x%360-360 if (x%360 &gt; 180) else x%360
+            else:
+                if self.angle_format[deg_var] == &#39;0:360&#39;:
+                    conv_function = lambda x: x%360
+                elif self.angle_format[deg_var] == &#39;-180:180&#39;:
+                    conv_function = lambda x: x%360-360 if (x%360 &gt; 180) else x%360
+            
+            self.preprocessed_data[deg_var] = self.preprocessed_data[deg_var].\
+                                                apply(conv_function)
+                                                
+    return self</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.change_spatial_format"><code class="name flex">
+<span>def <span class="ident">change_spatial_format</span></span>(<span>self, geospatial_format)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function which allows to change the geospatial variables format</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>geospatial_format</code></strong> :&ensp;<code>'dms', 'dm', 'dd'</code></dt>
+<dd>desired output geospatial data format</dd>
+</dl>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_spatial_format(self, geospatial_format):
+    &#34;&#34;&#34;
+    Function which allows to change the geospatial variables format
+    
+    Parameters
+    ----------
+    geospatial_format : &#39;dms&#39;, &#39;dm&#39;, &#39;dd&#39;
+         desired output geospatial data format
+         
+    Returns
+    -------
+    &#34;&#34;&#34;
+
+    # Errors gestion
+    if geospatial_format != &#39;dms&#39; and geospatial_format != &#39;dm&#39; and geospatial_format != &#39;dd&#39;:
+        raise ValueError(&#34;The geospatial conversion format must take one of the following values: &#39;dms&#39;, &#39;dm&#39;, &#39;dd&#39;&#34;)
+        
+    # Convert geo-spatial coordinates in right format
+    if geospatial_format == &#39;dm&#39;:
+        lat_func = convert_lat2dm
+        long_func = convert_long2dm
+    elif geospatial_format == &#39;dms&#39;:
+        lat_func = convert_lat2dms
+        long_func = convert_long2dms
+    elif geospatial_format == &#39;dd&#39;:
+        lat_func = convert2dd
+        long_func = convert2dd
+        
+    # Latitudes conversion   
+    self.preprocessed_data.loc[:, self.latitude_columns] = self.preprocessed_data.loc[:, self.latitude_columns]\
+                                                              .applymap(lat_func)
+    # Longitudes conversion                                             
+    self.preprocessed_data.loc[:, self.longitude_columns] = self.preprocessed_data.loc[:, self.longitude_columns]\
+                                                               .applymap(long_func)
+                                                              
+    self.set_columns_types()
+    
+    return self</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.distance_limit_filter"><code class="name flex">
+<span>def <span class="ident">distance_limit_filter</span></span>(<span>self, coord_pred=('BonVoyage_Latitude', 'BonVoyage_Longitude'), coord_reel=('NMEA GPS_Latitude [deg]', 'NMEA GPS_Longitude [deg]'))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function that allows you to filter time windows when
+real and predicted data differ too much</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>coord_pred</code></strong> :&ensp;<code>tuple(string)</code></dt>
+<dd>tuple containing variables names containing the Latitude and Longitude of the predicted
+spatial coordinates</dd>
+<dt><strong><code>coord_reel</code></strong> :&ensp;<code>tuple(string)</code></dt>
+<dd>tuple containing variables names containing the Latitude and Longitude of the real
+spatial coordinates</dd>
+</dl>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def distance_limit_filter(self, coord_pred=(&#39;BonVoyage_Latitude&#39;,&#39;BonVoyage_Longitude&#39;),
+                          coord_reel=(&#39;NMEA GPS_Latitude [deg]&#39;,&#39;NMEA GPS_Longitude [deg]&#39;)):
+    &#34;&#34;&#34;
+    Function that allows you to filter time windows when
+    real and predicted data differ too much
+
+    Parameters
+    ----------
+    
+    coord_pred : tuple(string)
+        tuple containing variables names containing the Latitude and Longitude of the predicted
+        spatial coordinates
+        
+    coord_reel : tuple(string)
+        tuple containing variables names containing the Latitude and Longitude of the real
+        spatial coordinates
+        
+    Returns
+    -------
+    &#34;&#34;&#34;
+    # Errors gestion
+    # Test that the geospatial variables to compare are in the form of decimal degree
+    types = self.preprocessed_data[[coord_pred[0], coord_pred[1], coord_reel[0], coord_reel[1] ]].dtypes
+    for t in types:
+        if t != &#39;float64&#39;:
+            raise ValueError(&#34;The geospatial variables to compare must be in the format &#39;decimal degre&#39;&#34;)
+    
+    # Check if prediction and reality don&#39;t differs more than a certain distance in km
+    distances_df = self.preprocessed_data.apply(lambda x: distance.distance((x[coord_pred[0]], x[coord_pred[1]]), 
+                            (x[coord_reel[0]], x[coord_reel[1]])).km if sum([np.isnan(x[coord_pred[0]]),np.isnan(x[coord_pred[1]]),np.isnan(x[coord_reel[0]]),np.isnan(x[coord_reel[1]])])==0 else 0, axis=1 )
+
+    print(&#39;\n-------------------------------------&#39;)
+    print(&#39;Time windows number before outlier distances suppression: &#39;, self.preprocessed_data.shape)
+    self.preprocessed_data = self.preprocessed_data.loc[distances_df &lt; self.dist_limit , :]
+    print(&#39;Time windows number after outlier distances suppression: &#39;, self.preprocessed_data.shape)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.nans_filter"><code class="name flex">
+<span>def <span class="ident">nans_filter</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function which allows to delete all time windows
+containing NaNs in self.preprocessed_data</p>
+<h2 id="parameters">Parameters</h2>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def nans_filter(self):
+    &#34;&#34;&#34;
+    Function which allows to delete all time windows
+    containing NaNs in self.preprocessed_data
+    
+    Parameters
+    ----------
+        
+    Returns
+    -------
+    &#34;&#34;&#34;
+    # Deleting lines which contains NaNs values
+    print(&#39;\n-------------------------------------&#39;)
+    print(&#39;Time windows number before NaNs suppression: &#39;, self.preprocessed_data.shape)
+    self.preprocessed_data.dropna(axis=0, how=&#39;any&#39;, inplace=True)
+    print(&#39;Time windows number after NaNs suppression: &#39;, self.preprocessed_data.shape)        
+    
+    return self</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.resample_and_interpolate"><code class="name flex">
+<span>def <span class="ident">resample_and_interpolate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function that resamples, aggregates and interpolates concatenated data in
+self.preprocessed_data</p>
+<h2 id="parameters">Parameters</h2>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resample_and_interpolate(self):
+    &#34;&#34;&#34;
+    Function that resamples, aggregates and interpolates concatenated data in
+    self.preprocessed_data
+    
+    Parameters
+    ----------
+        
+    Returns
+    -------
+    &#34;&#34;&#34;
+    self.set_date_index()
+    
+    df_for_index_creation = pd.DataFrame(index=self.preprocessed_data.index)
+    df_for_index_creation[&#39;col1&#39;] = 1
+    
+    # Create an empty dataframe with resampled index
+    index = df_for_index_creation.iloc[:,0].resample(self.resampling_windows)\
+                                        .agg(self.def_agregation_function)\
+                                        .index.tolist()
+                                        
+    res = pd.DataFrame(columns=self.all_columns, index=index)
+    res.index.name = self.preprocessed_data.index.name
+                                       
+
+    # Numerical variables processing
+    print(&#39;\n-------------------------------------&#39;)
+    print(&#39;Numerical variables processing...\n&#39;)
+    for var in self.num_columns:
+        print(var)
+        # We initialize the default agregation, interpolation and interpolation limit values
+        custom_agg_func = self.def_agregation_function
+        custom_inter_method = self.def_interpolation_method
+        custom_inter_limit = self.interpolation_limit
+            
+        if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_agg_function):
+            custom_agg_func = self.set_custom_agg_function[&#39;VRS&#39;]
+        if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_inter_method):
+            custom_inter_method = self.set_custom_inter_method[&#39;VRS&#39;]
+        if (&#39;VRS&#39; in var) and (&#39;VRS&#39; in self.set_custom_inter_limit_time):
+            custom_inter_limit = int( self.set_custom_inter_limit_time[&#39;VRS&#39;] / self.resampling_windows )
+            
+        if var in self.set_custom_agg_function:
+            custom_agg_func = self.set_custom_agg_function[var]
+        if var in self.set_custom_inter_method:
+            custom_inter_method = self.set_custom_inter_method[var]
+        if var in self.set_custom_inter_limit_time:
+            custom_inter_limit = int( self.set_custom_inter_limit_time[var] / self.resampling_windows )
+                
+        res.loc[:, var] = self.preprocessed_data.loc[:, var]\
+                                                .resample(self.resampling_windows)\
+                                                .agg(custom_agg_func)\
+                                                .interpolate(custom_inter_method, limit=int( custom_inter_limit/2 ), limit_direction=&#39;both&#39;)\
+                                                .astype(float)
+    
+    # Non-numerical variables processing
+    print(&#39;\n-------------------------------------&#39;)
+    print(&#39;Non-numerical variables processing...\n&#39;)
+    for var in self.non_num_columns:
+        print(var)
+        # We initialize the default agregation and interpolation methods for strings
+        custom_agg_func = self.agregation_string_function
+        custom_fill_method = self.fill_method_str
+        
+        if var in self.set_custom_agg_function:
+            custom_agg_func = self.set_custom_agg_function[var]
+        if var in self.set_custom_inter_method:
+            custom_inter_method = self.set_custom_inter_method[var]
+    
+        res.loc[:, var] = self.preprocessed_data.loc[:, var]\
+                                                .resample(self.resampling_windows)\
+                                                .agg(custom_agg_func)\
+                                                .fillna(method=custom_fill_method)
+           
+    self.preprocessed_data = res
+    
+    return self</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.save_preprocessed_data"><code class="name flex">
+<span>def <span class="ident">save_preprocessed_data</span></span>(<span>self, path, sheet_name='preprocessed_data', reset_index=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function that allows to save the preprocessed_data DataFrame
+in an .xlsx or .csv file</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>string</code></dt>
+<dd>path name of the .xlsx or .csv file to save the data</dd>
+<dt><strong><code>reset_index</code></strong> :&ensp;<code>boolean</code></dt>
+<dd>if True, set the time variable as a column, if False as an index</dd>
+</dl>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_preprocessed_data(self, path, sheet_name=&#39;preprocessed_data&#39;, reset_index=True):
+    &#34;&#34;&#34;
+    Function that allows to save the preprocessed_data DataFrame
+    in an .xlsx or .csv file
+    
+    Parameters
+    ----------
+    path : string
+         path name of the .xlsx or .csv file to save the data
+    reset_index : boolean
+        if True, set the time variable as a column, if False as an index 
+        
+    Returns
+    -------
+    &#34;&#34;&#34;
+    _, extension = os.path.splitext(path)
+    
+    if extension == &#39;.csv&#39;:
+        if reset_index == True:
+            self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}).to_csv(path, index=False)
+        else:
+            self.preprocessed_data.to_csv(path)
+            
+    elif extension == &#39;.xlsx&#39;:
+        writer = pd.ExcelWriter(path)
+        if reset_index == True:
+            self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}).to_excel(writer, sheet_name=sheet_name, index=False)
+        else:
+            self.preprocessed_data.to_excel(writer, sheet_name=sheet_name)
+        
+        # Close the Pandas Excel writer and output the Excel file.
+        writer.save()</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.save_preprocessed_data_in_RDS"><code class="name flex">
+<span>def <span class="ident">save_preprocessed_data_in_RDS</span></span>(<span>self, table_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to save preprocessed data in AWS RDS</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>string</code></dt>
+<dd>table name</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>new_table_name</code></strong> :&ensp;<code>string</code></dt>
+<dd>the renamed table name if the table already exists in the RDS bdd</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_preprocessed_data_in_RDS(self, table_name):
+    &#34;&#34;&#34;
+    Function to save preprocessed data in AWS RDS
+    
+    Parameters
+    ----------
+    table_name : string
+         table name
+         
+    Returns
+    -------
+    new_table_name : string
+        the renamed table name if the table already exists in the RDS bdd
+    &#34;&#34;&#34;
+    new_table_name = import_dataframe_in_RDS(df=self.preprocessed_data.reset_index().rename(columns={&#34;index&#34;: &#34;Date/Time&#34;}), table_name=table_name)
+    
+    return new_table_name</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.set_columns_types"><code class="name flex">
+<span>def <span class="ident">set_columns_types</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function which allows to create attributes that contains
+the type of each variable present in self.preprocessed_data</p>
+<h2 id="parameters">Parameters</h2>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_columns_types(self):
+    &#34;&#34;&#34;
+    Function which allows to create attributes that contains
+    the type of each variable present in self.preprocessed_data
+    
+    Parameters
+    ----------
+    
+    Returns
+    -------
+    &#34;&#34;&#34;
+    # Locate columns containing str or date values, and the others that are supposed numeric 
+    self.all_columns = self.preprocessed_data.columns.tolist()
+    self.string_columns = self.preprocessed_data.dtypes[self.preprocessed_data.dtypes == &#39;object&#39;].index.tolist()
+    self.date_columns = self.preprocessed_data.dtypes[self.preprocessed_data.dtypes == &#39;datetime64[ns]&#39;].index.tolist()
+    self.non_num_columns = self.date_columns + self.string_columns
+    self.num_columns = [col for col in self.preprocessed_data.columns.tolist() if col not in self.non_num_columns ]
+    
+    # Locate geospatial columns
+    self.latitude_columns = list( self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;Latitude&#39;)] )
+    self.longitude_columns = list( self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;Longitude&#39;)] )
+    
+    # Locate angular columns
+    deg_columns = []
+    deg_columns += list(self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;[deg]&#39;, regex=False)])
+    deg_columns += list(self.preprocessed_data.columns[self.preprocessed_data.columns.str.contains(pat=&#39;(°)&#39;, regex=False)]) 
+    # Retire geospatial variables from the angular variables
+    r = re.compile(&#34;^((?!Latitude|Longitude).)*$&#34;) 
+    deg_columns = list(filter(r.match, deg_columns)) 
+    self.deg_columns = deg_columns          
+    
+    return self</code></pre>
+</details>
+</dd>
+<dt id="Projet Syroco.ShipResampler.ShipResampler.set_date_index"><code class="name flex">
+<span>def <span class="ident">set_date_index</span></span>(<span>self, time_var_name='Date/Time')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function which allows to put the temporal variable in the index of
+self.preprocessed_data DataFrame</p>
+<h2 id="parameters">Parameters</h2>
+<h2 id="returns">Returns</h2></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_date_index(self, time_var_name=&#39;Date/Time&#39;):
+    &#34;&#34;&#34;
+    Function which allows to put the temporal variable in the index of 
+    self.preprocessed_data DataFrame
+
+    Parameters
+    ----------
+    
+    Returns
+    -------
+    &#34;&#34;&#34;
+    self.preprocessed_data = self.preprocessed_data.set_index(time_var_name)
+    self.preprocessed_data.index.name = time_var_name
+    
+    # Update columns types
+    self.set_columns_types()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Projet Syroco" href="index.html">Projet Syroco</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Projet Syroco.ShipResampler.ShipResampler" href="#Projet Syroco.ShipResampler.ShipResampler">ShipResampler</a></code></h4>
+<ul class="">
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.change_deg_format" href="#Projet Syroco.ShipResampler.ShipResampler.change_deg_format">change_deg_format</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.change_spatial_format" href="#Projet Syroco.ShipResampler.ShipResampler.change_spatial_format">change_spatial_format</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.distance_limit_filter" href="#Projet Syroco.ShipResampler.ShipResampler.distance_limit_filter">distance_limit_filter</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.nans_filter" href="#Projet Syroco.ShipResampler.ShipResampler.nans_filter">nans_filter</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.resample_and_interpolate" href="#Projet Syroco.ShipResampler.ShipResampler.resample_and_interpolate">resample_and_interpolate</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.save_preprocessed_data" href="#Projet Syroco.ShipResampler.ShipResampler.save_preprocessed_data">save_preprocessed_data</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.save_preprocessed_data_in_RDS" href="#Projet Syroco.ShipResampler.ShipResampler.save_preprocessed_data_in_RDS">save_preprocessed_data_in_RDS</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.set_columns_types" href="#Projet Syroco.ShipResampler.ShipResampler.set_columns_types">set_columns_types</a></code></li>
+<li><code><a title="Projet Syroco.ShipResampler.ShipResampler.set_date_index" href="#Projet Syroco.ShipResampler.ShipResampler.set_date_index">set_date_index</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
