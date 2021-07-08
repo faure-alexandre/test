@@ -232,6 +232,7 @@ paire sont supprimées
 
 ### Classe Files:
 Classe générique d'un fichier de capteurs.
+[lien](./html/Projet%20Syroco/Files.html)
 
 Attributs:
 * `path` : string contenant le chemin d'accès au fichier source .xlsx.
